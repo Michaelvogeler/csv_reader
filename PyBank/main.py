@@ -74,8 +74,7 @@ print("Greatest increase in profits:", greatest_increase_date, greatest_increase
 print("Greatest decrease in profits:", greatest_decrease_date, greatest_decrease_profit)
 
 
-
-print(f"""
+result = f"""
         Financial Analysis
 ----------------------------
 Total Months: {total_months}
@@ -83,4 +82,15 @@ Total: ${total_profit}
 Average Change: ${average_change:.2f}
 Greatest Increase in Profits: {greatest_increase_date} {greatest_increase_profit}
 Greatest Decrease in Profits: {greatest_decrease_date} {greatest_decrease_profit}
-      """)
+      """
+print(result)
+
+# Specify the file path
+file_path = "analysis/output.txt"
+
+# Open the file in write mode ('w')
+with open(file_path, 'w') as file:
+    # Write the string to the file
+    file.write(result)
+
+print("Text saved to", file_path)
